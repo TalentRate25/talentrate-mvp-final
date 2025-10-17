@@ -58,21 +58,13 @@ export function useUser() {
           setUser(userData)
           console.log('User set with credits:', creditData?.balance || 0)
         } else {
-          console.log('No auth user found, setting test user')
-          setUser({
-            id: 'test-user-id',
-            email: 'test@example.com',
-            credits: 200
-          })
+          console.log('No auth user found')
+          setUser(null)
         }
       } catch (error) {
         console.error('Error in getUser (timeout or other):', error)
-        console.log('Setting test user due to error/timeout')
-        setUser({
-          id: 'test-user-id',
-          email: 'test@example.com',
-          credits: 200
-        })
+        console.log('Setting user to null due to error/timeout')
+        setUser(null)
       }
       
       console.log('Setting loading to false')
