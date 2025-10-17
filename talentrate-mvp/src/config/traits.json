@@ -1,0 +1,356 @@
+{
+  "traits": [
+    {
+      "id": "T1",
+      "name": "Career Progression Velocity",
+      "category": "Experience Architecture",
+      "definition": "Rate of advancement, promotions, and role elevation over time",
+      "evidence": "Job titles showing increasing seniority, promotions within companies",
+      "keywords": ["Promoted to", "Advanced to", "Elevated from"]
+    },
+    {
+      "id": "T2",
+      "name": "Tenure Stability Pattern",
+      "category": "Experience Architecture",
+      "definition": "Balance between job stability and strategic career mobility",
+      "evidence": "Length of time at each position, frequency of job changes",
+      "keywords": ["Years/months at each position"]
+    },
+    {
+      "id": "T3",
+      "name": "Role Complexity Evolution",
+      "category": "Experience Architecture",
+      "definition": "Trajectory of increasing responsibility and scope over career",
+      "evidence": "Budget size, team size, project scale mentioned over time",
+      "keywords": ["Managed $X budget", "Led team of X", "Oversaw X projects"]
+    },
+    {
+      "id": "T4",
+      "name": "Industry Depth vs Breadth",
+      "category": "Experience Architecture",
+      "definition": "Pattern of industry specialization vs cross-sector experience",
+      "evidence": "Number and variety of industries worked in",
+      "keywords": ["Industry names", "sector terminology"]
+    },
+    {
+      "id": "T5",
+      "name": "Seniority Alignment",
+      "category": "Experience Architecture",
+      "definition": "Current career level relative to years of experience",
+      "evidence": "Current title vs total years of experience",
+      "keywords": ["Senior", "Lead", "Director", "VP", "C-Level"]
+    },
+    {
+      "id": "T6",
+      "name": "Qualification Level",
+      "category": "Educational Foundation",
+      "definition": "Highest level of formal education attained",
+      "evidence": "Degrees listed (Associate, Bachelor, Master, PhD, etc.)",
+      "keywords": ["Bachelor's", "Master's", "PhD", "MBA", "Doctorate"]
+    },
+    {
+      "id": "T7",
+      "name": "Institutional Caliber",
+      "category": "Educational Foundation",
+      "definition": "Reputation and relevance of educational institutions",
+      "evidence": "University names, rankings, specialized programs",
+      "keywords": ["University names", "Russell Group", "Ivy League", "accreditations"]
+    },
+    {
+      "id": "T8",
+      "name": "Field-of-Study Relevance",
+      "category": "Educational Foundation",
+      "definition": "Alignment between academic background and career path",
+      "evidence": "Degree subject matter vs job roles held",
+      "keywords": ["Degree field names", "majors", "specializations"]
+    },
+    {
+      "id": "T9",
+      "name": "Continuous Learning Evidence",
+      "category": "Educational Foundation",
+      "definition": "Recent professional development and ongoing education",
+      "evidence": "Recent courses, certifications, workshops attended",
+      "keywords": ["Certified", "Completed", "Trained in", "dates of courses"]
+    },
+    {
+      "id": "T10",
+      "name": "Technical Skill Breadth",
+      "category": "Technical Capability",
+      "definition": "Range and variety of technical tools/technologies known",
+      "evidence": "Number of different tools, technologies, software listed",
+      "keywords": ["Software names", "technology names", "tool names"]
+    },
+    {
+      "id": "T11",
+      "name": "Technical Skill Depth",
+      "category": "Technical Capability",
+      "definition": "Evidence of mastery level in technical competencies",
+      "evidence": "Years of experience, proficiency levels, certifications",
+      "keywords": ["Expert in", "Advanced", "X years experience with", "Certified"]
+    },
+    {
+      "id": "T12",
+      "name": "Technology Currency",
+      "category": "Technical Capability",
+      "definition": "Recency and modernity of technology stack",
+      "evidence": "Modern vs legacy technologies mentioned",
+      "keywords": ["Current tech names", "latest", "modern", "version numbers"]
+    },
+    {
+      "id": "T13",
+      "name": "Tool Proficiency Density",
+      "category": "Technical Capability",
+      "definition": "Number of demonstrated competencies per career year",
+      "evidence": "Total skills vs years of experience ratio",
+      "keywords": ["Count of tools/technologies mentioned"]
+    },
+    {
+      "id": "T14",
+      "name": "Cross-Domain Technical Ability",
+      "category": "Technical Capability",
+      "definition": "Technical proficiency across multiple domains",
+      "evidence": "Variety in types of technical skills",
+      "keywords": ["Different technical domains mentioned"]
+    },
+    {
+      "id": "T15",
+      "name": "Quantified Accomplishment Density",
+      "category": "Impact & Achievement",
+      "definition": "Frequency of metrics and numbers used to describe achievements",
+      "evidence": "Numbers, percentages, amounts per role description",
+      "keywords": ["%", "$", "X users", "increased by", "reduced", "grew"]
+    },
+    {
+      "id": "T16",
+      "name": "Project Scale Indicators",
+      "category": "Impact & Achievement",
+      "definition": "Evidence of large-scale project involvement",
+      "evidence": "Team sizes, budget amounts, user numbers, market reach",
+      "keywords": ["Team of X", "Budget of $X", "X million users", "enterprise"]
+    },
+    {
+      "id": "T17",
+      "name": "Business Impact Evidence",
+      "category": "Impact & Achievement",
+      "definition": "Direct contributions to business outcomes",
+      "evidence": "Revenue growth, cost savings, efficiency gains stated",
+      "keywords": ["Revenue", "saved $X", "increased sales", "ROI", "growth"]
+    },
+    {
+      "id": "T18",
+      "name": "Awards & Recognition",
+      "category": "Impact & Achievement",
+      "definition": "Formal acknowledgments and honors received",
+      "evidence": "Awards, honors, recognition programs mentioned",
+      "keywords": ["Award", "recognised", "winner", "nominated", "honored"]
+    },
+    {
+      "id": "T19",
+      "name": "Publication/Patent Record",
+      "category": "Impact & Achievement",
+      "definition": "Thought leadership through publications or patents",
+      "evidence": "Papers, articles, patents, books, conference talks",
+      "keywords": ["Published", "patent", "author", "speaker", "presented at"]
+    },
+    {
+      "id": "T20",
+      "name": "People Management Evidence",
+      "category": "Leadership Footprint",
+      "definition": "Experience managing, supervising, or leading people",
+      "evidence": "Direct reports mentioned, team leadership roles",
+      "keywords": ["Managed team of X", "supervised", "direct reports", "led"]
+    },
+    {
+      "id": "T21",
+      "name": "Strategic Influence Indicators",
+      "category": "Leadership Footprint",
+      "definition": "Involvement in strategic planning and decision-making",
+      "evidence": "Strategy-related keywords, C-level interaction mentions",
+      "keywords": ["Strategy", "vision", "roadmap", "C-suite", "board", "executive"]
+    },
+    {
+      "id": "T22",
+      "name": "Cross-Functional Coordination",
+      "category": "Leadership Footprint",
+      "definition": "Experience working across departments and functions",
+      "evidence": "Multi-department projects, cross-team collaboration",
+      "keywords": ["Cross-functional", "collaborated with", "worked across"]
+    },
+    {
+      "id": "T23",
+      "name": "Mentorship & Development",
+      "category": "Leadership Footprint",
+      "definition": "Experience developing others through mentoring/coaching",
+      "evidence": "Mentoring programs, training delivery, coaching activities",
+      "keywords": ["Mentor", "coached", "trained", "developed", "onboarded"]
+    },
+    {
+      "id": "T24",
+      "name": "Written Communication Quality",
+      "category": "Communication Proficiency",
+      "definition": "Quality of writing evident in CV itself",
+      "evidence": "Grammar, spelling, structure, clarity of CV",
+      "keywords": ["N/A (assessed from CV quality directly)"]
+    },
+    {
+      "id": "T25",
+      "name": "Language Mastery",
+      "category": "Communication Proficiency",
+      "definition": "Number and proficiency level of languages spoken",
+      "evidence": "Languages listed with proficiency levels",
+      "keywords": ["Fluent", "native", "conversational", "basic", "language names"]
+    },
+    {
+      "id": "T26",
+      "name": "Professional Presentation",
+      "category": "Communication Proficiency",
+      "definition": "Quality of CV formatting and organization",
+      "evidence": "Structure, layout, use of space, visual hierarchy",
+      "keywords": ["N/A (assessed from CV format directly)"]
+    },
+    {
+      "id": "T27",
+      "name": "Articulation Precision",
+      "category": "Communication Proficiency",
+      "definition": "Clarity and specificity in describing roles and achievements",
+      "evidence": "Specific vs vague language, concrete examples",
+      "keywords": ["Specific verbs", "concrete nouns vs vague terms"]
+    },
+    {
+      "id": "T28",
+      "name": "Role Diversity Index",
+      "category": "Adaptability & Growth",
+      "definition": "Variety in types of positions held throughout career",
+      "evidence": "Different job functions, role types across career",
+      "keywords": ["Different role titles and functions"]
+    },
+    {
+      "id": "T29",
+      "name": "Industry Transition Ability",
+      "category": "Adaptability & Growth",
+      "definition": "Success in navigating changes between industry sectors",
+      "evidence": "Different industries worked in, sector changes",
+      "keywords": ["Different industry names and sectors"]
+    },
+    {
+      "id": "T30",
+      "name": "Skill Acquisition Rate",
+      "category": "Adaptability & Growth",
+      "definition": "Pace of learning new competencies over time",
+      "evidence": "New skills added over career progression",
+      "keywords": ["Recently added skills", "new certifications by date"]
+    },
+    {
+      "id": "T31",
+      "name": "Geographic/Cultural Mobility",
+      "category": "Adaptability & Growth",
+      "definition": "Experience working in different locations or cultures",
+      "evidence": "Multiple cities/countries, international experience",
+      "keywords": ["Location names", "international", "global", "relocated"]
+    },
+    {
+      "id": "T32",
+      "name": "Technology Adoption Speed",
+      "category": "Adaptability & Growth",
+      "definition": "Pace of adopting emerging tools and technologies",
+      "evidence": "Recently emerged tech in skillset vs career length",
+      "keywords": ["Modern tech names with recent dates"]
+    },
+    {
+      "id": "T33",
+      "name": "Innovation Indicators",
+      "category": "Problem-Solving Capacity",
+      "definition": "Evidence of creating new solutions or approaches",
+      "evidence": "Frequency of innovation-related action verbs",
+      "keywords": ["Implemented", "created", "designed", "innovated", "pioneered"]
+    },
+    {
+      "id": "T34",
+      "name": "Process Improvement Evidence",
+      "category": "Problem-Solving Capacity",
+      "definition": "Track record of optimizing and enhancing systems",
+      "evidence": "Process improvement, efficiency mentions with metrics",
+      "keywords": ["Optimized", "streamlined", "improved", "efficiency", "reduced"]
+    },
+    {
+      "id": "T35",
+      "name": "Initiative Demonstration",
+      "category": "Problem-Solving Capacity",
+      "definition": "Evidence of self-started projects and proactive work",
+      "evidence": "Self-initiated projects, \"launched\", \"founded\" mentions",
+      "keywords": ["Initiated", "launched", "founded", "started", "created"]
+    },
+    {
+      "id": "T36",
+      "name": "Complex Problem Context",
+      "category": "Problem-Solving Capacity",
+      "definition": "Difficulty level of challenges and problems addressed",
+      "evidence": "Complexity indicators in problem descriptions",
+      "keywords": ["Complex", "challenging", "critical", "enterprise-scale"]
+    },
+    {
+      "id": "T37",
+      "name": "Achievement Density",
+      "category": "Work Ethic & Drive",
+      "definition": "Number of accomplishments relative to time in role",
+      "evidence": "Achievements listed per position vs tenure length",
+      "keywords": ["Achievement statements per role"]
+    },
+    {
+      "id": "T38",
+      "name": "Extra-Curricular Engagement",
+      "category": "Work Ethic & Drive",
+      "definition": "Professional engagement beyond primary role",
+      "evidence": "Side projects, volunteering, professional associations",
+      "keywords": ["Volunteer", "board member", "side project", "pro bono"]
+    },
+    {
+      "id": "T39",
+      "name": "Certification Pursuit",
+      "category": "Work Ethic & Drive",
+      "definition": "Professional development commitment through certifications",
+      "evidence": "Number and recency of professional certifications",
+      "keywords": ["Certification names", "certified", "accredited"]
+    },
+    {
+      "id": "T40",
+      "name": "Tenure Productivity",
+      "category": "Work Ethic & Drive",
+      "definition": "Output and impact achieved within each role period",
+      "evidence": "Accomplishments relative to length of employment",
+      "keywords": ["Achievements listed per role"]
+    },
+    {
+      "id": "T41",
+      "name": "Team Collaboration Frequency",
+      "category": "Cultural & Collaboration",
+      "definition": "Frequency of collaborative work mentions",
+      "evidence": "Team-related keywords throughout CV",
+      "keywords": ["Team", "collaborated", "partnered", "worked with"]
+    },
+    {
+      "id": "T42",
+      "name": "Stakeholder Management Evidence",
+      "category": "Cultural & Collaboration",
+      "definition": "Experience managing relationships with diverse stakeholders",
+      "evidence": "Client, vendor, partner, stakeholder interaction mentions",
+      "keywords": ["Client", "stakeholder", "vendor", "partner", "customer"]
+    },
+    {
+      "id": "T43",
+      "name": "Cross-Cultural Experience",
+      "category": "Cultural & Collaboration",
+      "definition": "Exposure to and work with international or diverse teams",
+      "evidence": "International work, diverse team mentions",
+      "keywords": ["International", "global", "diverse", "multicultural"]
+    },
+    {
+      "id": "T44",
+      "name": "Soft Skill Demonstration",
+      "category": "Cultural & Collaboration",
+      "definition": "Evidence of interpersonal and emotional intelligence skills",
+      "evidence": "Soft skill keywords and behavioral evidence",
+      "keywords": ["Communication", "empathy", "listening", "conflict resolution"]
+    }
+  ]
+}
