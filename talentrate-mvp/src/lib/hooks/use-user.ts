@@ -94,7 +94,6 @@ export function useUser() {
           console.log('Clearing user from auth state change')
           setUser(null)
         }
-        setLoading(false)
       }
     )
 
