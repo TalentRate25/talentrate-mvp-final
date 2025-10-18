@@ -135,6 +135,10 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+-- Enable RLS on the view (views inherit RLS from underlying tables)
+-- But we need to grant access to the view specifically
+GRANT SELECT ON v_credit_balance TO anon, authenticated;
+
 -- Grant necessary permissions
 GRANT USAGE ON SCHEMA public TO anon, authenticated;
 GRANT ALL ON ALL TABLES IN SCHEMA public TO anon, authenticated;
