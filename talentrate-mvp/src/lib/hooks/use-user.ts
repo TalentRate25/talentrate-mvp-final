@@ -32,10 +32,9 @@ export function useUser() {
           console.log('Fetching credits for user:', session.user.id)
           
           const { data: creditData, error: creditError } = await supabase
-            .from('v_credit_balance')
-            .select('balance')
+            .from('credit_ledger')
+            .select('delta')
             .eq('user_id', session.user.id)
-            .maybeSingle()
           
           console.log('Credit query result:', { creditData, creditError })
           
@@ -43,10 +42,13 @@ export function useUser() {
             console.error('Error fetching credits:', creditError)
           }
           
+          // Calculate total credits from ledger entries
+          const credits = creditData?.reduce((sum, entry) => sum + entry.delta, 0) || 0
+          
           setUser({
             id: session.user.id,
             email: session.user.email || '',
-            credits: creditData?.balance || 0
+            credits
           })
         } else {
           console.log('No session found')
@@ -74,10 +76,9 @@ export function useUser() {
           console.log('Fetching credits for user (auth state change):', session.user.id)
           
           const { data: creditData, error: creditError } = await supabase
-            .from('v_credit_balance')
-            .select('balance')
+            .from('credit_ledger')
+            .select('delta')
             .eq('user_id', session.user.id)
-            .maybeSingle()
           
           console.log('Credit query result (auth state change):', { creditData, creditError })
           
@@ -85,10 +86,13 @@ export function useUser() {
             console.error('Error fetching credits (auth state change):', creditError)
           }
           
+          // Calculate total credits from ledger entries
+          const credits = creditData?.reduce((sum, entry) => sum + entry.delta, 0) || 0
+          
           setUser({
             id: session.user.id,
             email: session.user.email || '',
-            credits: creditData?.balance || 0
+            credits
           })
         } else {
           console.log('Clearing user from auth state change')
