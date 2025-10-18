@@ -21,15 +21,9 @@ export function useUser() {
     async function getUser() {
       console.log('getUser function called')
       
-      // Add timeout to prevent hanging
-      const timeoutPromise = new Promise((_, reject) => {
-        setTimeout(() => reject(new Error('Auth timeout')), 5000)
-      })
-      
       try {
         console.log('Calling supabase.auth.getUser()...')
-        const authPromise = supabase.auth.getUser()
-        const { data: { user: authUser }, error } = await Promise.race([authPromise, timeoutPromise]) as { data: { user: any }, error: any }
+        const { data: { user: authUser }, error } = await supabase.auth.getUser()
         console.log('Auth result:', { authUser, error })
         
         if (authUser) {
@@ -62,8 +56,7 @@ export function useUser() {
           setUser(null)
         }
       } catch (error) {
-        console.error('Error in getUser (timeout or other):', error)
-        console.log('Setting user to null due to error/timeout')
+        console.error('Error in getUser:', error)
         setUser(null)
       }
       
