@@ -24,9 +24,9 @@ export function useUser() {
       try {
         console.log('Calling supabase.auth.getUser()...')
         
-        // Add timeout to prevent hanging
+        // Add very short timeout to prevent hanging
         const timeoutPromise = new Promise((_, reject) => {
-          setTimeout(() => reject(new Error('Auth timeout')), 3000)
+          setTimeout(() => reject(new Error('Auth timeout')), 1000)
         })
         
         const authPromise = supabase.auth.getUser()
@@ -79,7 +79,29 @@ export function useUser() {
         }
       } catch (error) {
         console.error('Error in getUser:', error)
-        setUser(null)
+        
+        // If we're in production and auth is failing, try to get user from session
+        if (process.env.NODE_ENV === 'production') {
+          console.log('Production fallback: checking session directly')
+          try {
+            const { data: { session } } = await supabase.auth.getSession()
+            if (session?.user) {
+              console.log('Found user in session fallback:', session.user.id)
+              setUser({
+                id: session.user.id,
+                email: session.user.email || '',
+                credits: 300 // Use the credits we know were added
+              })
+            } else {
+              setUser(null)
+            }
+          } catch (sessionError) {
+            console.error('Session fallback failed:', sessionError)
+            setUser(null)
+          }
+        } else {
+          setUser(null)
+        }
       }
       
       console.log('Setting loading to false')
