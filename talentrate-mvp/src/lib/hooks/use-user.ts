@@ -23,7 +23,14 @@ export function useUser() {
       
       try {
         console.log('Calling supabase.auth.getUser()...')
-        const { data: { user: authUser }, error } = await supabase.auth.getUser()
+        
+        // Add timeout to prevent hanging
+        const timeoutPromise = new Promise((_, reject) => {
+          setTimeout(() => reject(new Error('Auth timeout')), 3000)
+        })
+        
+        const authPromise = supabase.auth.getUser()
+        const { data: { user: authUser }, error } = await Promise.race([authPromise, timeoutPromise]) as { data: { user: any }, error: any }
         console.log('Auth result:', { authUser, error })
         
         if (authUser) {
@@ -52,8 +59,23 @@ export function useUser() {
           setUser(userData)
           console.log('User set with credits:', creditData?.balance || 0)
         } else {
-          console.log('No auth user found')
-          setUser(null)
+          console.log('No auth user found, checking session...')
+          
+          // Fallback: check session
+          const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+          console.log('Session check:', { session, sessionError })
+          
+          if (session?.user) {
+            console.log('Found user in session:', session.user.id)
+            setUser({
+              id: session.user.id,
+              email: session.user.email || '',
+              credits: 0 // Default credits, will be updated by auth state change
+            })
+          } else {
+            console.log('No user found in session either')
+            setUser(null)
+          }
         }
       } catch (error) {
         console.error('Error in getUser:', error)
