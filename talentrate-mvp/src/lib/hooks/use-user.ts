@@ -28,27 +28,22 @@ export function useUser() {
         if (session?.user) {
           console.log('User found in session:', session.user.id)
           
-          // Fetch real credits from database
+          // Fetch real credits from database using RPC function
           console.log('Fetching credits for user:', session.user.id)
           
-          const { data: creditData, error: creditError } = await supabase
-            .from('credit_ledger')
-            .select('delta')
-            .eq('user_id', session.user.id)
+          const { data: credits, error: creditError } = await supabase
+            .rpc('get_user_credits', { user_uuid: session.user.id })
           
-          console.log('Credit query result:', { creditData, creditError })
+          console.log('Credit query result:', { credits, creditError })
           
           if (creditError) {
             console.error('Error fetching credits:', creditError)
           }
           
-          // Calculate total credits from ledger entries
-          const credits = creditData?.reduce((sum, entry) => sum + entry.delta, 0) || 0
-          
           setUser({
             id: session.user.id,
             email: session.user.email || '',
-            credits
+            credits: credits || 0
           })
         } else {
           console.log('No session found')
@@ -72,27 +67,22 @@ export function useUser() {
         if (session?.user) {
           console.log('Setting user from auth state change:', session.user.id)
           
-          // Fetch real credits from database
+          // Fetch real credits from database using RPC function
           console.log('Fetching credits for user (auth state change):', session.user.id)
           
-          const { data: creditData, error: creditError } = await supabase
-            .from('credit_ledger')
-            .select('delta')
-            .eq('user_id', session.user.id)
+          const { data: credits, error: creditError } = await supabase
+            .rpc('get_user_credits', { user_uuid: session.user.id })
           
-          console.log('Credit query result (auth state change):', { creditData, creditError })
+          console.log('Credit query result (auth state change):', { credits, creditError })
           
           if (creditError) {
             console.error('Error fetching credits (auth state change):', creditError)
           }
           
-          // Calculate total credits from ledger entries
-          const credits = creditData?.reduce((sum, entry) => sum + entry.delta, 0) || 0
-          
           setUser({
             id: session.user.id,
             email: session.user.email || '',
-            credits
+            credits: credits || 0
           })
         } else {
           console.log('Clearing user from auth state change')
